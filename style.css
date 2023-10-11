@@ -1,3 +1,25 @@
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --varyDarkBlue: hsl(234, 12%, 34%);
+  --grayishBlue: hsl(229, 6%, 66%);
+  --veryLightGray: hsl(0, 0%, 98%);
+  --weight1: 200;
+  --weight2: 400;
+  --weight3: 600;
+}
+
+.logo-mochila {
+  position: absolute;
+  top: 50%;
+  right: 20px;  /* Puedes ajustar este valor para mover el logo a la derecha según tus necesidades */
+  transform: translateY(-50%);  /* Centra el logo verticalmente */
+  font-size: 2em; /* Si estás usando un ícono, ajusta el tamaño aquí. Elimina si estás usando una imagen */
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -92,6 +114,7 @@ body {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 7.4px;
+  line-height: 1em; /* Adjust this value to your preference */
 }
 
 @media (max-width: 600px) {
@@ -108,19 +131,22 @@ body {
 body{
   background: #fcfcfc;
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;  /* Stack children vertically */
+  min-height: 100vh;  
 }
-footer{
-  position: absolute;
+footer {
+  /* position: absolute; remove this */
   bottom: 0;
   left: 0;
   right: 0;
   background: #323c50;
   height: auto;
   width: 100vw;
-
   padding-top: 40px;
   color: #fff;
 }
+
 .footer-content{
   display: flex;
   align-items: center;
@@ -208,120 +234,8 @@ text-decoration: none;
 
 /* Estilos tabla*/
 
-.container th h1 {
-  font-weight: bold;
-  font-size: 1.3vw;
-text-align: left;
-color: #0087B5;
-}
-
-@media screen and (max-width: 768px) {
-.container th h1 {
-  font-size: 2vw; /* Tamaño para pantallas pequeñas */
-}
-}
-
-.container td {
-  font-weight: normal;
-  color: #F0F0F0;
-  font-size: 1.3vw; /* El tamaño de fuente será el 3% del ancho de la ventana */
-  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
-  -moz-box-shadow: 0 2px 2px -2px #0E1119;
-  box-shadow: 0 2px 2px -2px #0E1119;
-}
-
-@media screen and (max-width: 768px) {
-.container td {
-font-size: 2vw; /* Tamaño para pantallas pequeñas */
-}
-
-}
-
-.container {
-text-align: left;
-overflow: hidden;
-width: 60%;
-margin: 0 auto;
-display: table;
-padding: 0 0 8em 0;
-margin-top: 1rem;
-}
-@media screen and (max-width: 1200px) {
-  .container {
-    width: 85%;
-  }
-}
-@media screen and (max-width: 768px) {
-.container {
-  width: 95%;
-}
-}
-
-
-
-.container td, .container th {
-  padding-bottom: 2%;
-  padding-top: 2%;
-padding-left:2%;  
-}
-
-/* Background-color of the odd rows */
-.container tr:nth-child(odd) {
-  background-color: #323C50;
-}
-
-/* Background-color of the even rows */
-.container tr:nth-child(even) {
-  background-color: #2C3446;
-}
-
-.container th {
-  background-color: #1F2739;
-}
-
-.container td:first-child { color: #3DA8CC;
-font-weight: bold;
-font-size: 1vw;
-}
-@media screen and (max-width: 768px) {
-.container td:first-child {
-  font-size: 2vw; /* Tamaño para pantallas pequeñas */
-}
-}
-
-.container tr:hover {
-background-color: #464A52;
--webkit-box-shadow: 0 6px 6px -6px #0E1119;
--moz-box-shadow: 0 6px 6px -6px #0E1119;
-box-shadow: 0 6px 6px -6px #0E1119;
-}
-
-.container td:hover {
-background-color: #3DA8CC;
-color: #403E10;
-font-weight: bold;
-
-box-shadow: #003242 -1px 1px, #003242 -2px 2px, #003242 -3px 3px, #003242 -4px 4px, #003242 -5px 5px, #003242 -6px 6px;
-transform: translate3d(6px, -6px, 0);
-
-transition-delay: 0s;
-  transition-duration: 0.4s;
-  transition-property: all;
-transition-timing-function: line;
-}
-
-@media (max-width: 800px) {
-.container td:nth-child(3),
-.container th:nth-child(3) { display: none; }
-}
-
-
 .contenido {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra verticalmente */
-  justify-content: space-between; /* Espacio entre elementos */
-  height: 55vh; /* 100% de la altura del viewport */
+  flex: 1; /* 100% de la altura del viewport */
 }
 @media (max-height: 800px) {
   .contenido {
@@ -333,3 +247,134 @@ transition-timing-function: line;
   flex-grow: 1; /* Se expandirá para ocupar el espacio restante */
 }
 
+.box p {
+  color: var(--grayishBlue);
+}
+
+.box, .box2, .box3 {
+  border-radius: 5px;
+  box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+  padding: 30px;
+  margin: 20px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+img {
+  float: right;
+  max-width: 100%;
+  max-height: 100%;
+  width: 70px; /* Cambia el valor al ancho deseado */
+  height: auto;
+}
+
+
+@media (max-width: 450px) {
+  .box, .box2, .box3 {
+    height: 200px;
+  }
+}
+
+@media (max-width: 950px) and (min-width: 450px) {
+  .box, .box2, .box3 {
+    text-align: center;
+    height: 180px;
+  }
+}
+
+.cyan {
+  border-top: 3px solid var(--cyan);
+}
+
+.red {
+  border-top: 3px solid var(--red);
+}
+
+.blue {
+  border-top: 3px solid var(--blue);
+}
+
+.orange {
+  border-top: 3px solid var(--orange);
+}
+
+h2 {
+  color: var(--varyDarkBlue);
+  font-weight: var(--weight3);
+}
+
+@media (min-width: 950px) {
+  .row1-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .row2-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box-down {
+    position: relative;
+    top: 150px;
+  }
+
+  .box, .box2, .box3 {
+    width: 20%;
+  }
+
+  .header p {
+    width: 30%;
+  }
+}
+
+.container {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#hideBoxesButton, #hideBoxesButton2, #hideBoxesButton3 {
+  background-color: var(--red);
+  color: white;
+  font-weight: var(--weight2);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin: 20px auto;
+  width: 8rem;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  border-radius: 7px;
+}
+
+
+#hideBoxesButton:hover, #hideBoxesButton2:hover, #hideBoxesButton3:hover {
+  transform: scale(1.1); /* Escala el botón al 110% en el hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumenta la intensidad de la sombra en el hover */
+}
+
+.hide-boxes, .hide-boxes2, .hide-boxes3 {
+  display: none;
+  opacity: 0;
+}
+
+
+.btn {
+  background-color: var(--red);
+  color: rgb(70, 67, 67);
+  font-weight: var(--weight2);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin: 20px auto;
+  border-radius: 20px; /* Hace que el botón sea redondeado */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutíl */
+
+  transition: transform 0.2s, box-shadow 0.2s; /* Agrega transiciones para los efectos de hover */
+}
+
+.btn:hover {
+  transform: scale(1.1); /* Escala el botón al 110% en el hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumenta la intensidad de la sombra en el hover */
+}
